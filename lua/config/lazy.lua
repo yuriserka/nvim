@@ -19,12 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 require "lazy".setup {
   -- Theme
   {
-    'navarasu/onedark.nvim',
+    "olimorris/onedarkpro.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("onedark")
-    end,
   },
   { 'nvim-tree/nvim-web-devicons',       lazy = true },
   { 'nvim-lua/plenary.nvim',             lazy = false },
@@ -49,9 +46,12 @@ require "lazy".setup {
   { "tpope/vim-commentary" },
   { "tpope/vim-surround" },
   { "nvim-pack/nvim-spectre" },
-
   { 'nvim-lualine/lualine.nvim' }, -- Statusline
   { 'RRethy/vim-illuminate' }, -- Highlight exact same words on buffer
+
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+
+  -- Auto Completion
   { 'github/copilot.vim' },
 }
 
