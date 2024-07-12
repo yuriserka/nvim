@@ -1,4 +1,5 @@
 {
+  "Eva-Theme.nvim": { "branch": "master", "commit": "2f9434a1aa74bb333e99a4a2e3a4a9fd2a4ba289" },
   "copilot.vim": { "branch": "release", "commit": "25f73977033c597d530c7ab0e211d99b60927d2d" },
   "gitsigns.nvim": { "branch": "main", "commit": "e9c4187c3774a46df2d086a66cf3a7e6bea4c432" },
   "lazy.nvim": { "branch": "main", "commit": "1d451b4c2ce957da05e2123ce1a001804fc7ea96" },
