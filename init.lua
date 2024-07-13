@@ -5,6 +5,7 @@ require("config.lazy")
 
 require("plugins.colorscheme-config")
 require("plugins.just-setups-config")
+require("plugins.cmp-config")
 require("plugins.treesitter-config")
 require("plugins.gitsigns-config")
 require("plugins.lsp-config")
