@@ -21,12 +21,12 @@ require "lazy".setup {
   {
     "olimorris/onedarkpro.nvim",
     lazy = false,
-    priority = 999,
+    priority = 1000,
   },
   {
     "sharpchen/Eva-Theme.nvim",
     lazy = false,
-    priority = 1000,
+    priority = 100,
   },
   { 'nvim-tree/nvim-web-devicons',       lazy = true },
   { 'nvim-lua/plenary.nvim',             lazy = false },

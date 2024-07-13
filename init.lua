@@ -13,4 +13,4 @@ require("plugins.fugitive-config")
 require("plugins.telescope-config")
 require("plugins.spectre-config")
 require("plugins.toggleterm-config")
-
+require("plugins.statusline-config")
