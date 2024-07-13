@@ -5,7 +5,7 @@ require('nvim-tree').setup {
     dotfiles = false
   },
   view = {
-    width = 40,
+    width = 50,
     preserve_window_proportions = false,
     side = "right",
   },
@@ -16,6 +16,12 @@ require('nvim-tree').setup {
     open_file = {
       resize_window = false,
     }
+  },
+  renderer = {
+    indent_width = 1,
+    indent_markers = {
+      enable = true,
+    },
   }
 }
 
