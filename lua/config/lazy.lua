@@ -31,7 +31,10 @@ require "lazy".setup {
   { 'nvim-tree/nvim-web-devicons',       lazy = true },
   { 'nvim-lua/plenary.nvim',             lazy = false },
 
-  { 'nvim-treesitter/nvim-treesitter' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
 
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -39,9 +42,22 @@ require "lazy".setup {
   },
 
   -- LSP
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      'williamboman/mason-lspconfig.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      { 'j-hui/fidget.nvim', opts = {} },
+      { 'folke/neodev.nvim' },
+    }
+  },
+  {
+    'nvim-java/nvim-java',
+    dependencies = {
+      'neovim/nvim-lspconfig',
+    }
+  },
 
   -- Editor tools
   { "windwp/nvim-autopairs" },
@@ -53,6 +69,24 @@ require "lazy".setup {
   { "nvim-pack/nvim-spectre" },
   { 'nvim-lualine/lualine.nvim' }, -- Statusline
   { 'RRethy/vim-illuminate' }, -- Highlight exact same words on buffer
+  { "lukas-reineke/indent-blankline.nvim" },
+  {
+    'folke/trouble.nvim',
+    keys = {
+      {
+        "<leader>tt",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+    },
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio"
+    },
+  },
 
   -- Terminal
   {'akinsho/toggleterm.nvim', version = "*", config = true},

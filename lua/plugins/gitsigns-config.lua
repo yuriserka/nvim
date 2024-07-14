@@ -1,6 +1,12 @@
-require('gitsigns').setup()
+local gitsigns = require('gitsigns')
 
-vim.api.nvim_set_keymap('n', '<leader>hp', ":Gitsigns preview_hunk<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>hu', ":Gitsigns reset_hunk<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>hb', ":Gitsigns blame_line --full<CR>", {})
+gitsigns.setup({
+  current_line_blame = true,
+  current_line_blame_opts = {
+    delay = 500,
+  },
+})
 
+vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk, {})
+vim.keymap.set('n', '<leader>hr', gitsigns.reset_hunk, {})
+vim.keymap.set('n', '<leader>hb', gitsigns.blame_line, {})

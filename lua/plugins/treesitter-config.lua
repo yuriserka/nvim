@@ -1,3 +1,4 @@
+---@diagnostic disable-next-line: missing-fields
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "c",
@@ -24,6 +25,8 @@ require 'nvim-treesitter.configs'.setup {
     "yaml",
     "zig"
   },
+
+  auto_install = true,
 
   context_commentstring = {
     enable = true

@@ -7,10 +7,10 @@ local lsp_clients = {
   'clangd',
   'csharp_ls',
   'elixirls',
---  'erlangls',
+  -- 'erlangls',
   'gradle_ls',
---  'hls',
---  'java_language_server',
+  -- 'hls',
+  'jdtls',
   'pylsp',
   'rust_analyzer',
   'sqls',
@@ -29,13 +29,10 @@ local function on_attach(fclient, bufnr)
   vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-
-  local gs = package.loaded.gitsigns
-  gs.toggle_current_line_blame()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
 require('mason-lspconfig').setup_handlers {
   function(server_name)
