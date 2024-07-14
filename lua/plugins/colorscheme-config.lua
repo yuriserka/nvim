@@ -2,7 +2,7 @@
 require("onedarkpro").setup({
   options = {
     cursorline = true,
-    transparency = true,
+    -- transparency = true,
     lualine_transparency = true,
     terminal_colors = true,
   },
