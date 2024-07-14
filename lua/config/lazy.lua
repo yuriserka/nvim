@@ -80,11 +80,19 @@ require "lazy".setup {
       },
     },
   },
+
+  -- Debugging
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio"
+    },
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
     },
   },
 

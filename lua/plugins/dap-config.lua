@@ -9,3 +9,5 @@ vim.keymap.set('n', '<leader>si', dap.step_into, {})
 vim.keymap.set('n', '<leader>so', dap.step_over, {})
 vim.keymap.set('n', '<leader>ds', dap.continue, {})
 vim.keymap.set('n', '<leader>df', dap.terminate, {})
+
+require('dap-python').setup ".venv/bin/python"
